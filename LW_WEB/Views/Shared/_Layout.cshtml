@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <title>@Resources.Resource.LeadwellEIP</title>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/semantic/dist/semantic.min.js"></script>
+    <script src="~/Scripts/HWCustomize.js"></script>
+    <link rel="stylesheet" href="~/semantic/dist/semantic.min.css" />
+    <script type="text/javascript">
+        $(function() {
+
+            $('#menu-sidebar-context')
+                .sidebar('setting', 'transition', 'uncover')
+                .sidebar('attach events', '#menu-sidebar')
+            ;
+
+            $('#lang-dropdown')
+                .dropdown({
+                    // you can use any ui transition
+                    transition: 'drop'
+                })
+            ;
+        });
+    </script>
+    <style>
+        
+  body {
+    background-color: #FFFFFF;
+  }
+  .main.container {
+    margin-top: 6em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  /*底部樣式
+    .ui.footer.segment {
+    margin: 1em 0em 0em;
+    padding: 2em 0em;
+  }*/
+  
+    </style>
+</head>
+<body>
+
+
+    @*頭*@
+    <div class="ui fixed main menu">
+        <a class="item" id="menu-sidebar">
+            <i class="sidebar icon"></i>
+            @Resources.Resource.MenuSidebarMenu
+        </a>
+        <div class="item">
+            <img src="~/images/logo3.jpg" class="ui centeredimage">
+        </div>
+        <div class="item right">
+            <div class="ui compact selection dropdown right" id="lang-dropdown">
+                <i class="world icon"></i>
+                <span class="text">@Resources.Resource.SelectLanguage</span>
+                <div class="menu">
+                    <div class="item">@Resources.Resource.SelectLanguageChinessZHTW</div>
+                    <div class="item">@Resources.Resource.SelectLanguageChinessENUS</div>
+                    <div class="item">@Resources.Resource.SelectLanguageChinessZHCN</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pusher">
+        @*側邊欄*@
+        <div class="ui left vertical inverted labeled icon sidebar menu" id="menu-sidebar-context">
+            <a href="/Default/Index" class="item">
+                <i class="home icon"></i>@*首頁*@
+                @Resources.Resource.MenuSidebarHome
+            </a>
+            <a href="/Default/SystemApplication" class="item">
+                <i class="block layout icon"></i>@*應用程式*@
+                @Resources.Resource.MenuSidebarApplication
+            </a>
+            <a href="/Default/Calender" class="item">
+                <i class="calendar icon"></i>@*行事曆*@
+                @Resources.Resource.MenuSidebarCalendar
+            </a>
+            <a class="item">
+                <i class="settings icon"></i>@*設定*@
+                @Resources.Resource.MenuSidebarSetup
+            </a>
+            <a href="/Default/Description" class="item">
+                <i class="help icon"></i>@*說明*@
+                @Resources.Resource.MenuSidebarExplan
+            </a>
+            <a class="item">
+                <i class="power icon"></i>@*登出*@
+                @Resources.Resource.MenuSidebarLogout
+            </a>
+        </div>
+
+        @*頁面內容顯示*@
+        <div class="ui segment">
+            <div class="ui hidden divider"></div>
+            <div class="ui hidden divider"></div>
+            <div class="ui hidden divider"></div>
+            @RenderBody()
+        </div>
+
+        @*底*@
+        <div class="ui center aligned footer segment">
+            <a id="MartianTalk" data-tooltip="" data-position="top left">
+                <i class="large yellow reddit icon"></i>
+            </a>
+            @Resources.Resource.CopyrightInformation
+            <a href="mailto:info@leadwell.com.tw">
+                @Resources.Resource.ITEmail
+            </a>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

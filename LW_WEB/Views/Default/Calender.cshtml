@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Calender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href='~/Scripts/fullcalendar/fullcalendar.css' rel='stylesheet' />
+<link href='~/Scripts/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='~/Scripts/fullcalendar/lib/moment.min.js'></script>
+<script src='~/Scripts/fullcalendar/fullcalendar.min.js'></script>
+<script src='~/Scripts/fullcalendar/locale/zh-tw.js'></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: new Date(),
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [] //個人行事曆內容
+        });
+
+    });
+
+</script>
+@*麵包屑*@
+<div class="ui breadcrumb">
+    <a class="section">首頁</a>
+    <i class="right chevron icon divider"></i>
+    <div class="active section">行事曆</div>
+</div>
+<div class="ui hidden divider"></div>
+<div id='calendar'></div>

@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Description";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    //彈出視窗，利用class自訂義modalsttest來取得id值，並彈出class為id值的內容視窗
+    $(function () {
+        $(".modalstest").click(function () {
+            var divClass = $(this).attr('id')
+            $('.' + divClass).modal('setting', 'closable', false)
+            $('.' + divClass).modal('show');
+        });
+    });
+</script>
+@*麵包屑*@
+<div class="ui breadcrumb">
+    <a class="section">首頁</a>
+    <i class="right chevron icon divider"></i>
+    <div class="active section">說明</div>
+</div>
+
+@*「說明」列表*@
+<table class="ui selectable celled table">
+    <thead>
+        <tr>
+            <th>
+                系統功能說明
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="modalstest" id="modaldiv1">
+                <i class="file outline icon"></i>測試1
+            </td>
+        </tr>
+        <tr>
+            <td class="modalstest" id="modaldiv2">
+                <i class="file outline icon"></i>測試2
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+@*「說明」內容*@
+<div class="ui modal modaldiv1">
+    <i class="close icon"></i>
+    <div class="header">
+        測1
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            確定
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+<div class="ui modal modaldiv2">
+    <i class="close icon"></i>
+    <div class="header">
+        測2
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            確定
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
