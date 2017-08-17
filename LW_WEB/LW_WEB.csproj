@@ -106,6 +106,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\CaptchaMvc.dll" />
+    <Content Include="bin\CaptchaMvc.pdb" />
+    <Content Include="bin\CaptchaMvc.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\LW_WEB.dll" />
+    <Content Include="bin\LW_WEB.pdb" />
+    <Content Include="bin\Oracle.DataAccess.dll" />
+    <Content Include="bin\Oracle.ManagedDataAccess.dll" />
+    <Content Include="bin\Oracle.ManagedDataAccess.EntityFramework.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.xml" />
+    <Content Include="bin\zh-Hant\EntityFramework.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Razor.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Webpages.Razor.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Web.Webpages.resources.dll" />
     <Content Include="Global.asax" />
     <EntityDeploy Include="Models\AccountModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -118,6 +149,7 @@
     <Content Include="Scripts\fullcalendar\demos\php\get-events.php" />
     <Content Include="Scripts\fullcalendar\demos\php\get-timezones.php" />
     <Content Include="Scripts\fullcalendar\demos\php\utils.php" />
+    <None Include="bin\LW_WEB.dll.config" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\fullcalendar\CHANGELOG.txt" />
     <Content Include="Scripts\fullcalendar\CONTRIBUTING.txt" />
@@ -396,6 +428,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\TestModels\LogonTestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Home\App_LocalResources\HomeResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -437,6 +470,8 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="bin\App_GlobalResources\" />
+    <Folder Include="bin\Views\Home\App_LocalResources\" />
     <Folder Include="images\" />
     <Folder Include="ViewEngine\" />
     <Folder Include="ViewModels\" />

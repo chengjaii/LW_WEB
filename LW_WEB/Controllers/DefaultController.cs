@@ -32,6 +32,10 @@ namespace LW_WEB.Controllers
         }
 
         // 設定
+        public ActionResult SystemSetup()
+        {
+            return View();
+        }
 
 
     }
