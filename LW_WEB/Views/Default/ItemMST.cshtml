@@ -1,0 +1,316 @@
+﻿
+@{
+    @model IEnumerable<LW_WEB.Models.TestModels.ITEM_MST>
+    ViewBag.Title = "ItemMST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*麵包屑*@
+<div class="ui breadcrumb">
+    <a class="section">首頁</a>
+    <i class="right chevron icon divider"></i>
+    <a class="section">產品結構管理</a>
+    <i class="right chevron icon divider"></i>
+    <div class="active section">物料主檔資料 ItemMST</div>
+</div>
+@*功能列表*@
+<div class="ui menu">
+    <div class="item">
+        <button class="left attached ui button blue"><i class="plus icon"></i>新增</button>
+        <button class="attached ui button blue"><i class="trash outline icon"></i>刪除</button>
+        <button class="attached ui button blue"><i class="save icon"></i>儲存</button>
+        <button class="attached ui button blue"><i class="arrow circle left icon"></i>逆展</button>
+        <button class="right attached ui button blue"><i class="copy icon"></i>複製</button>
+    </div>
+    <div class="item">
+        <button class="left attached ui button blue"><i class="fork icon"></i>變異</button>
+        <button class="right attached ui button blue"><i class="dropbox icon"></i>舊料</button>
+    </div>
+    @*搜尋*@
+    <div class="right item">
+        <div class="ui icon input">
+            <input type="text" placeholder="搜尋物號編號...">
+            <i class="search link icon"></i>
+        </div>
+    </div>
+</div>
+<div>
+    <table class="ui blue selectable celled table">
+        <thead class="ui center aligned segment">
+            <tr>
+                <th>
+                    <div>功能</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CODE)
+                    <div>物料編號</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CDESCRIP)
+                    <div>中文品名</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DESCRIP)
+                    <div>英文品名</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SPEC)
+                    <div>中文規格</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UNIT)
+                    <div>單位</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.U_CONVERT)
+                    <div>單位數量換算率</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.METAL)
+                    <div>材質</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MATERIAL)
+                    <div>物料種類</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CLASS_F)
+                    <div>價格等級</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CLASS_S)
+                    <div>分類變異記錄</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CLASS)
+                    <div>ABC類別</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_MODE)
+                    <div>製作方式分類</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACCT_ID)
+                    <div>會計科目</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRICE)
+                    <div>成本單價</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRICE_S)
+                    <div>美金售價</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DRAW_MAN)
+                    <div>製圖者</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PAPER_SIZE)
+                    <div>圖紙尺寸</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DW_LOCATE)
+                    <div>製圖存放位置</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DOC_NR)
+                    <div>變異文號</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UP_DATE)
+                    <div>製圖建立日期</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QC_MK)
+                    <div>檢驗註記</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VENDOR)
+                    <div>供應廠商簡稱</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PROJECT)
+                    <div>採購員</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LD_TIME)
+                    <div>前置時間</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_KIND)
+                    <div>暫估價格識別</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOTE)
+                    <div>備註</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRICE_C)
+                    <div>成本平均單價</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WEIGTH)
+                    <div>重量</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ESPEC)
+                    <div>英文規格</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CLR_NR)
+                    <div>顏色</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CST_NR)
+                    <div>成本分類代碼</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ORIGIN)
+                    <div>原產地</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRICE_P)
+                    <div>預估單價</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ORG_CODE)
+                    <div>前料號</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WOOL_CODE)
+                    <div>木模料號</div>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.STOP_SALES)
+                    <div>停產註記</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model)
+           {
+                <tr>
+                    <td class="collapsing">
+                        <div class="ui small floated main menu">
+                            <a class="trash outline icon item" title="刪除">
+                                <i class="trash outline icon"></i>
+                            </a>
+                            <a class="write icon item" title="編輯">
+                                <i class="write icon"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CDESCRIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPEC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UNIT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.U_CONVERT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.METAL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MATERIAL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CLASS_F)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CLASS_S)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CLASS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_MODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACCT_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRICE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRICE_S)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DRAW_MAN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PAPER_SIZE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DW_LOCATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOC_NR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UP_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QC_MK)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VENDOR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PROJECT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LD_TIME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_KIND)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOTE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRICE_C)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WEIGTH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ESPEC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CLR_NR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CST_NR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ORIGIN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRICE_P)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ORG_CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WOOL_CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.STOP_SALES)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ItemMSTModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ITEM_MST">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="nvarchar2" MaxLength="10" Nullable="false" />
+          <Property Name="CDESCRIP" Type="nvarchar2" MaxLength="30" />
+          <Property Name="DESCRIP" Type="nvarchar2" MaxLength="40" />
+          <Property Name="SPEC" Type="nvarchar2" MaxLength="40" />
+          <Property Name="UNIT" Type="varchar2" MaxLength="3" />
+          <Property Name="U_CONVERT" Type="number" Precision="4" Scale="0" />
+          <Property Name="METAL" Type="nvarchar2" MaxLength="10" />
+          <Property Name="MATERIAL" Type="varchar2" MaxLength="1" />
+          <Property Name="CLASS_F" Type="varchar2" MaxLength="1" />
+          <Property Name="CLASS_S" Type="varchar2" MaxLength="1" />
+          <Property Name="CLASS" Type="varchar2" MaxLength="1" />
+          <Property Name="P_MODE" Type="varchar2" MaxLength="1" />
+          <Property Name="ACCT_ID" Type="varchar2" MaxLength="10" />
+          <Property Name="PRICE" Type="number" Precision="10" Scale="2" />
+          <Property Name="PRICE_S" Type="number" Precision="10" Scale="2" />
+          <Property Name="DRAW_MAN" Type="nvarchar2" MaxLength="10" />
+          <Property Name="PAPER_SIZE" Type="nvarchar2" MaxLength="2" />
+          <Property Name="DW_LOCATE" Type="nvarchar2" MaxLength="5" />
+          <Property Name="DOC_NR" Type="varchar2" MaxLength="12" />
+          <Property Name="UP_DATE" Type="varchar2" MaxLength="8" />
+          <Property Name="QC_MK" Type="varchar2" MaxLength="1" />
+          <Property Name="VENDOR" Type="nvarchar2" MaxLength="20" />
+          <Property Name="PROJECT" Type="varchar2" MaxLength="3" />
+          <Property Name="LD_TIME" Type="number" Precision="3" Scale="0" />
+          <Property Name="P_KIND" Type="varchar2" MaxLength="1" />
+          <Property Name="NOTE" Type="nvarchar2" MaxLength="20" />
+          <Property Name="PRICE_C" Type="number" Precision="10" Scale="2" />
+          <Property Name="WEIGTH" Type="number" Precision="10" Scale="3" />
+          <Property Name="ESPEC" Type="nvarchar2" MaxLength="40" />
+          <Property Name="CLR_NR" Type="nvarchar2" MaxLength="10" />
+          <Property Name="CST_NR" Type="varchar2" MaxLength="5" />
+          <Property Name="ORIGIN" Type="varchar2" MaxLength="20" />
+          <Property Name="PRICE_P" Type="number" Precision="10" Scale="2" />
+          <Property Name="ORG_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="WOOL_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="STOP_SALES" Type="varchar2" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="ItemMSTModelStoreContainer">
+          <EntitySet Name="ITEM_MST" EntityType="Self.ITEM_MST" Schema="DESMGR" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ItemMSTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ITEM_MST">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CDESCRIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIP" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SPEC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="UNIT" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="U_CONVERT" Type="Int16" />
+          <Property Name="METAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MATERIAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS_F" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS_S" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="P_MODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ACCT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PRICE_S" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DRAW_MAN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PAPER_SIZE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="DW_LOCATE" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_NR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="UP_DATE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="QC_MK" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VENDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROJECT" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="LD_TIME" Type="Byte" />
+          <Property Name="P_KIND" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE_C" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="WEIGTH" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="ESPEC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CLR_NR" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CST_NR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ORIGIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PRICE_P" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ORG_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WOOL_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STOP_SALES" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ITEM_MST" EntityType="Self.ITEM_MST" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ItemMSTModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="ITEM_MST">
+            <EntityTypeMapping TypeName="ItemMSTModel.ITEM_MST">
+              <MappingFragment StoreEntitySet="ITEM_MST">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="CDESCRIP" ColumnName="CDESCRIP" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="SPEC" ColumnName="SPEC" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="U_CONVERT" ColumnName="U_CONVERT" />
+                <ScalarProperty Name="METAL" ColumnName="METAL" />
+                <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+                <ScalarProperty Name="CLASS_F" ColumnName="CLASS_F" />
+                <ScalarProperty Name="CLASS_S" ColumnName="CLASS_S" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="P_MODE" ColumnName="P_MODE" />
+                <ScalarProperty Name="ACCT_ID" ColumnName="ACCT_ID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="PRICE_S" ColumnName="PRICE_S" />
+                <ScalarProperty Name="DRAW_MAN" ColumnName="DRAW_MAN" />
+                <ScalarProperty Name="PAPER_SIZE" ColumnName="PAPER_SIZE" />
+                <ScalarProperty Name="DW_LOCATE" ColumnName="DW_LOCATE" />
+                <ScalarProperty Name="DOC_NR" ColumnName="DOC_NR" />
+                <ScalarProperty Name="UP_DATE" ColumnName="UP_DATE" />
+                <ScalarProperty Name="QC_MK" ColumnName="QC_MK" />
+                <ScalarProperty Name="VENDOR" ColumnName="VENDOR" />
+                <ScalarProperty Name="PROJECT" ColumnName="PROJECT" />
+                <ScalarProperty Name="LD_TIME" ColumnName="LD_TIME" />
+                <ScalarProperty Name="P_KIND" ColumnName="P_KIND" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="PRICE_C" ColumnName="PRICE_C" />
+                <ScalarProperty Name="WEIGTH" ColumnName="WEIGTH" />
+                <ScalarProperty Name="ESPEC" ColumnName="ESPEC" />
+                <ScalarProperty Name="CLR_NR" ColumnName="CLR_NR" />
+                <ScalarProperty Name="CST_NR" ColumnName="CST_NR" />
+                <ScalarProperty Name="ORIGIN" ColumnName="ORIGIN" />
+                <ScalarProperty Name="PRICE_P" ColumnName="PRICE_P" />
+                <ScalarProperty Name="ORG_CODE" ColumnName="ORG_CODE" />
+                <ScalarProperty Name="WOOL_CODE" ColumnName="WOOL_CODE" />
+                <ScalarProperty Name="STOP_SALES" ColumnName="STOP_SALES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -138,18 +138,28 @@
     <Content Include="bin\zh-Hant\System.Web.Webpages.Razor.resources.dll" />
     <Content Include="bin\zh-Hant\System.Web.Webpages.resources.dll" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\AccountModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccountModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\AccountModel.edmx.diagram">
-      <DependentUpon>AccountModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\fullcalendar\demos\json\events.json" />
     <Content Include="Scripts\fullcalendar\demos\php\get-events.php" />
     <Content Include="Scripts\fullcalendar\demos\php\get-timezones.php" />
     <Content Include="Scripts\fullcalendar\demos\php\utils.php" />
     <None Include="bin\LW_WEB.dll.config" />
+    <EntityDeploy Include="Models\TestModels\ItemMSTModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ItemMSTModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TestModels\ItemMSTModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ItemMSTModel.edmx</DependentUpon>
+      <LastGenOutput>ItemMSTModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TestModels\ItemMSTModel.edmx.diagram">
+      <DependentUpon>ItemMSTModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\TestModels\ItemMSTModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ItemMSTModel.edmx</DependentUpon>
+      <LastGenOutput>ItemMSTModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\fullcalendar\CHANGELOG.txt" />
     <Content Include="Scripts\fullcalendar\CONTRIBUTING.txt" />
@@ -255,6 +265,11 @@
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="semantic\dist\components\accordion.css" />
     <Content Include="semantic\dist\components\accordion.js" />
     <Content Include="semantic\dist\components\accordion.min.css" />
@@ -406,7 +421,9 @@
     <Content Include="semantic\dist\themes\default\assets\images\flags.png" />
     <Content Include="semantic\dist\themes\github\assets\fonts\octicons.svg" />
     <Content Include="semantic\dist\themes\material\assets\fonts\icons.svg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
@@ -423,12 +440,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModel.Designer.cs">
+    <Compile Include="Models\TestModels\ItemMSTModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
+      <DependentUpon>ItemMSTModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestModels\LogonTestModel.cs" />
+    <Compile Include="Models\TestModels\ItemMSTModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemMSTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestModels\ItemMSTModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemMSTModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestModels\ITEM_MST.cs">
+      <DependentUpon>ItemMSTModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Home\App_LocalResources\HomeResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -460,6 +489,8 @@
     <Content Include="Views\Default\Description.cshtml" />
     <Content Include="Views\Default\Calender.cshtml" />
     <Content Include="Views\Default\SystemApplication.cshtml" />
+    <Content Include="Views\Default\ItemMST.cshtml" />
+    <Content Include="Views\Default\SystemSetup.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
